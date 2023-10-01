@@ -7,4 +7,5 @@ class EndPoints {
   static const String categories = 'categories';
   static const String newArrivals = 'products-new-arrivals';
   static const String products = 'products';
+  static const String getUserProfile = 'profile';
 }

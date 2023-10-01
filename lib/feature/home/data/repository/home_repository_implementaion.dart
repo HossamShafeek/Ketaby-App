@@ -17,8 +17,7 @@ class HomeRepositoryImplementation extends HomeRepository {
   HomeRepositoryImplementation(this.apiServices);
 
   @override
-  Future<Either<Failure, SlidersModel>>
-      getSliders() async {
+  Future<Either<Failure, SlidersModel>> getSliders() async {
     try {
       Response data = await apiServices.get(
         endPoint: EndPoints.sliders,
@@ -86,13 +85,14 @@ class HomeRepositoryImplementation extends HomeRepository {
   }
 
   @override
-  Future<Either<Failure, List<Product>>> getBooks() async{
+  Future<Either<Failure, List<Product>>> getBooks() async {
     try {
       Response data = await apiServices.get(
         endPoint: EndPoints.products,
         token: AppConstants.token,
       );
-      return Right((data.data['data']['products'] as List<dynamic>).map((product){
+      return Right(
+          (data.data['data']['products'] as List<dynamic>).map((product) {
         return Product.fromJson(product);
       }).toList());
     } catch (error) {
@@ -103,5 +103,4 @@ class HomeRepositoryImplementation extends HomeRepository {
       }
     }
   }
-
-  }
+}

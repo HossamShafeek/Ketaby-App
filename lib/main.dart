@@ -5,7 +5,6 @@ import 'package:ketaby/config/routes/app_routes.dart';
 import 'package:ketaby/config/themes/app_theme.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();

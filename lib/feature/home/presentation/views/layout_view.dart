@@ -27,6 +27,7 @@ class _LayoutViewState extends State<LayoutView> {
     NewArrivalsCubit.get(context).getNewArrivals();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AnimatedDrawerCubit, AnimatedDrawerState>(

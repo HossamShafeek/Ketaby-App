@@ -40,9 +40,7 @@ class TitleAndSubtitle extends StatelessWidget {
               child: Text(
                 buttonTitle,
                 style: AppStyles.textStyle14.copyWith(
-                  color: AppColors.indigo,
-                  fontWeight: FontWeight.bold
-                ),
+                    color: AppColors.indigo, fontWeight: FontWeight.bold),
               ),
             ),
           ],

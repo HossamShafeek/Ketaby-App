@@ -1,4 +1,3 @@
-
 import 'data.dart';
 
 class SlidersModel {
@@ -24,6 +23,4 @@ class SlidersModel {
         'error': error,
         'status': status,
       };
-
-
 }

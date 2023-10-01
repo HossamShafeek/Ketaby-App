@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/utils/app_styles.dart';
 
-
 class DrawerButtonsSectionItem extends StatelessWidget {
   const DrawerButtonsSectionItem({
     Key? key,

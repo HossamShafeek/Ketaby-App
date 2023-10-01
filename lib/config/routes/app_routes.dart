@@ -20,6 +20,9 @@ import 'package:ketaby/feature/home/presentation/views/books_view.dart';
 import 'package:ketaby/feature/home/presentation/views/layout_view.dart';
 import 'package:ketaby/feature/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:ketaby/feature/onboarding/presentation/views/onboarding_view.dart';
+import 'package:ketaby/feature/profile/data/repositry/profile_repository_implementation.dart';
+import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_cubit.dart';
+import 'package:ketaby/feature/profile/presentation/views/profile_view.dart';
 import 'package:ketaby/feature/splash/presentation/views/splash_view.dart';
 
 class Routes {
@@ -31,6 +34,7 @@ class Routes {
   static const String searchView = '/search_view';
   static const String booksView = '/books_view';
   static const String bookDetailsView = '/book_details_view';
+  static const String profile = '/profile_view';
 }
 
 class AppRoutes {
@@ -65,14 +69,22 @@ class AppRoutes {
             child: const RegisterView(),
           ),
         );
-        case Routes.booksView:
+      case Routes.booksView:
         return PageSlideTransition(
           direction: AxisDirection.left,
           page: BlocProvider(
             create: (context) => BooksCubit(
-                HomeRepositoryImplementation(
-                    ApiServicesImplementation())),
+                HomeRepositoryImplementation(ApiServicesImplementation())),
             child: const BooksView(),
+          ),
+        );
+        case Routes.profile:
+        return PageSlideTransition(
+          direction: AxisDirection.left,
+          page: BlocProvider(
+            create: (context) => GetUserProfileCubit(
+                ProfileRepositoryImplementation(ApiServicesImplementation())),
+            child: const ProfileView(),
           ),
         );
       case Routes.layoutView:

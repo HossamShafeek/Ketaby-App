@@ -3,7 +3,6 @@ import 'package:ketaby/core/utils/app_colors.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/utils/app_styles.dart';
 
-
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     Key? key,

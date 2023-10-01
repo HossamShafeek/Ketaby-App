@@ -102,7 +102,6 @@ class RegisterTextsFieldsSection extends StatelessWidget {
                 hintText: 'Enter your confirm password',
                 paddingForBottom: AppConstants.padding20h,
               ),
-
             ],
           ),
         );

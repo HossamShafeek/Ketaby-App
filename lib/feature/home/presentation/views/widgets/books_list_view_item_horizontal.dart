@@ -61,7 +61,7 @@ class BooksListViewItemHorizontal extends StatelessWidget {
                           ),
                         ),
                         CustomContainerButton(
-                          onTap: (){},
+                          onTap: () {},
                           icon: IconBroken.Buy,
                           color: AppColors.indigo,
                         ),
@@ -86,7 +86,7 @@ class BooksListViewItemHorizontal extends StatelessWidget {
                         ),
                         const Spacer(),
                         CustomContainerButton(
-                          onTap: (){},
+                          onTap: () {},
                           icon: IconBroken.Heart,
                           color: AppColors.redAccent,
                         ),

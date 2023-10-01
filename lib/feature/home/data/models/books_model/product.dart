@@ -1,4 +1,3 @@
-
 class Product {
   int? id;
   String? name;
@@ -49,5 +48,4 @@ class Product {
         'image': image,
         'category': category,
       };
-
 }

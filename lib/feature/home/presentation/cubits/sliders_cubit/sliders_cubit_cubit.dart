@@ -5,7 +5,6 @@ import 'package:ketaby/core/errors/failures.dart';
 import 'package:ketaby/feature/home/data/models/sliders_model/sliders_model.dart';
 import 'package:ketaby/feature/home/data/repository/home_repository.dart';
 
-
 part 'sliders_cubit_state.dart';
 
 class SlidersCubit extends Cubit<SlidersState> {

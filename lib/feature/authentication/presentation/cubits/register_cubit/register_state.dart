@@ -1,4 +1,3 @@
-
 import 'package:ketaby/feature/authentication/data/models/authentication_model/authentication_model.dart';
 
 abstract class RegisterState {}

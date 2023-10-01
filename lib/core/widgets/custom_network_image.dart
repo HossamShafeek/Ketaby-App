@@ -4,14 +4,13 @@ import 'package:ketaby/config/icons/icons_broken.dart';
 import 'package:ketaby/core/utils/app_colors.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 
-
 class CustomNetworkImage extends StatelessWidget {
   final double? borderRadius;
   final String image;
   final Color? backgroundColor;
 
   const CustomNetworkImage(
-      {Key? key,  this.borderRadius, required this.image, this.backgroundColor})
+      {Key? key, this.borderRadius, required this.image, this.backgroundColor})
       : super(key: key);
 
   @override
@@ -21,8 +20,9 @@ class CustomNetworkImage extends StatelessWidget {
       height: double.infinity,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius??AppConstants.radius10sp),
-        color: backgroundColor??AppColors.white,
+        borderRadius:
+            BorderRadius.circular(borderRadius ?? AppConstants.radius10sp),
+        color: backgroundColor ?? AppColors.white,
       ),
       child: CachedNetworkImage(
         imageUrl: image,

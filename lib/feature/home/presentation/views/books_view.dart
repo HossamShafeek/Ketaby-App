@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ketaby/config/icons/icons_broken.dart';
 import 'package:ketaby/core/utils/app_colors.dart';
+import 'package:ketaby/core/utils/app_strings.dart';
 import 'package:ketaby/core/widgets/custom_back_button.dart';
 import 'package:ketaby/feature/home/presentation/cubits/books_cubit/books_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/books_cubit/books_state.dart';
@@ -16,7 +17,6 @@ class BooksView extends StatefulWidget {
 }
 
 class _BooksViewState extends State<BooksView> {
-
   @override
   void initState() {
     BooksCubit.get(context).getBooks();
@@ -41,7 +41,7 @@ class _BooksViewState extends State<BooksView> {
                       }
                     },
                   )
-                : const Text('Books'),
+                : const Text(AppStrings.books),
             actions: [
               BooksCubit.get(context).isSearching
                   ? IconButton(
@@ -71,5 +71,3 @@ class _BooksViewState extends State<BooksView> {
     );
   }
 }
-
-

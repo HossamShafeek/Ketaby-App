@@ -3,7 +3,6 @@ import 'package:ketaby/config/icons/icons_broken.dart';
 import 'package:ketaby/core/utils/app_colors.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 
-
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({Key? key, this.color}) : super(key: key);
   final Color? color;

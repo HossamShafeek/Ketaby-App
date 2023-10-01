@@ -6,7 +6,6 @@ import 'package:ketaby/feature/authentication/data/models/authentication_model/a
 import 'package:ketaby/feature/authentication/data/repository/authentication_repository.dart';
 import 'package:ketaby/feature/authentication/presentation/cubits/register_cubit/register_state.dart';
 
-
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit(this.authenticationRepository) : super(RegisterInitialState());
 
@@ -34,9 +33,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     emit(RegisterChangePasswordVisibilityState());
   }
 
-
   AuthenticationModel? registerModel;
-
 
   Future<void> userRegister() async {
     emit(RegisterLoadingState());

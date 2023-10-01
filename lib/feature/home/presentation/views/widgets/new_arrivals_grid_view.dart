@@ -42,7 +42,6 @@ class NewArrivalsGridView extends StatelessWidget {
               ),
               StaggeredGridView.countBuilder(
                 padding: EdgeInsets.symmetric(
-
                   horizontal: AppConstants.defaultPadding,
                 ),
                 physics: const NeverScrollableScrollPhysics(),

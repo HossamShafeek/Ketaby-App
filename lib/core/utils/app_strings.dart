@@ -15,4 +15,6 @@ class AppStrings {
   static const String bestSeller = 'Best Seller';
   static const String categories = 'Categories';
   static const String newArrivals = 'New Arrivals';
+  static const String profile = 'Profile';
+  static const String books = 'Books';
 }

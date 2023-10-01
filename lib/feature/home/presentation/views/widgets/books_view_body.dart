@@ -13,7 +13,9 @@ class BooksViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BooksCubit, BooksState>(builder: (context, state) {
-      if (state is BooksSuccessState || state is GetSearchedBooksList||state is ChangeIsSearchingState) {
+      if (state is BooksSuccessState ||
+          state is GetSearchedBooksList ||
+          state is ChangeIsSearchingState) {
         return ListView.separated(
           padding: EdgeInsets.all(AppConstants.defaultPadding),
           itemCount: BooksCubit.get(context).searchController.text.isEmpty

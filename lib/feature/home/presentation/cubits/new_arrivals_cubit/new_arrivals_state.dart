@@ -1,5 +1,3 @@
-
-
 import 'package:ketaby/feature/home/data/models/books_model/books_model.dart';
 
 abstract class NewArrivalsState {}

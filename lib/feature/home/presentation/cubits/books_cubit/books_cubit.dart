@@ -7,29 +7,28 @@ import 'package:ketaby/feature/home/data/repository/home_repository.dart';
 import 'package:ketaby/feature/home/presentation/cubits/books_cubit/books_state.dart';
 
 class BooksCubit extends Cubit<BooksState> {
- BooksCubit(this.homeRepository) : super(BooksInitialState());
+  BooksCubit(this.homeRepository) : super(BooksInitialState());
 
-  static BooksCubit get(BuildContext context) =>
-      BlocProvider.of(context);
+  static BooksCubit get(BuildContext context) => BlocProvider.of(context);
 
   final HomeRepository homeRepository;
 
   bool isSearching = false;
   TextEditingController searchController = TextEditingController();
 
-  List<Product> products=[];
+  List<Product> products = [];
 
- Future<void> getBooks() async {
-   emit(BooksLoadingState());
-   Either<Failure, List<Product>> result;
-   result = await homeRepository.getBooks();
-   result.fold((failure) {
-     emit(BooksFailureState(failure.error));
-   }, (products) {
-     this.products = products;
-     emit(BooksSuccessState(products));
-   });
- }
+  Future<void> getBooks() async {
+    emit(BooksLoadingState());
+    Either<Failure, List<Product>> result;
+    result = await homeRepository.getBooks();
+    result.fold((failure) {
+      emit(BooksFailureState(failure.error));
+    }, (products) {
+      this.products = products;
+      emit(BooksSuccessState(products));
+    });
+  }
 
   List<Product> searchedBooksList = [];
 

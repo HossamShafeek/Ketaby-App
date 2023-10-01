@@ -5,8 +5,6 @@ import 'package:ketaby/feature/home/data/models/categories_model/categories_mode
 import 'package:ketaby/feature/home/data/repository/home_repository.dart';
 import 'package:ketaby/feature/home/presentation/cubits/categories_cubit/categories_state.dart';
 
-
-
 class CategoriesCubit extends Cubit<CategoriesState> {
   CategoriesCubit(this.homeRepository) : super(CategoriesInitial());
   final HomeRepository homeRepository;

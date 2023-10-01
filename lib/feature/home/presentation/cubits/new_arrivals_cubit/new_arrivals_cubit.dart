@@ -6,7 +6,6 @@ import 'package:ketaby/feature/home/data/models/books_model/books_model.dart';
 import 'package:ketaby/feature/home/data/repository/home_repository.dart';
 import 'package:ketaby/feature/home/presentation/cubits/new_arrivals_cubit/new_arrivals_state.dart';
 
-
 class NewArrivalsCubit extends Cubit<NewArrivalsState> {
   NewArrivalsCubit(this.homeRepository) : super(NewArrivalsInitial());
 

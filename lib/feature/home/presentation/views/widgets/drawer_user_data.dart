@@ -7,7 +7,6 @@ import 'package:ketaby/feature/authentication/presentation/cubits/login_cubit/lo
 import 'package:ketaby/feature/authentication/presentation/cubits/login_cubit/login_state.dart';
 import 'package:ketaby/feature/home/presentation/views/widgets/drawer_user_photp.dart';
 
-
 class DrawerUserData extends StatelessWidget {
   const DrawerUserData({Key? key}) : super(key: key);
 

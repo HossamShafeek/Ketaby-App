@@ -25,6 +25,4 @@ class BooksModel {
         'error': error,
         'status': status,
       };
-
-
 }

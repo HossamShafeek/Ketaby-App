@@ -44,50 +44,54 @@ class NextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<OnBoardingCubit,OnBoardingState>(builder: (context, state) {
-      return Align(
-        alignment: Alignment.bottomRight,
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 50.0),
-          child: TextButton(
-              onPressed: () {
-                if (!OnBoardingCubit.get(context).isLast) {
-                  OnBoardingCubit.get(context).pageController.nextPage(
-                    duration: const Duration(
-                      milliseconds: 750,
+    return BlocBuilder<OnBoardingCubit, OnBoardingState>(
+      builder: (context, state) {
+        return Align(
+          alignment: Alignment.bottomRight,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 50.0),
+            child: TextButton(
+                onPressed: () {
+                  if (!OnBoardingCubit.get(context).isLast) {
+                    OnBoardingCubit.get(context).pageController.nextPage(
+                          duration: const Duration(
+                            milliseconds: 750,
+                          ),
+                          curve: Curves.linearToEaseOut,
+                        );
+                  } else {
+                    CacheHelper.setBoolean(key: 'onBoarding', value: true)
+                        .then((value) {
+                      Navigator.pushReplacementNamed(context, Routes.loginView);
+                    });
+                  }
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      OnBoardingCubit.get(context).isLast
+                          ? 'Get Started'
+                          : 'Next',
+                      style: AppStyles.textStyle22.copyWith(
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
-                    curve: Curves.linearToEaseOut,
-                  );
-                } else {
-                  CacheHelper.setBoolean(key: 'onBoarding', value: true)
-                      .then((value) {
-                    Navigator.pushReplacementNamed(context, Routes.loginView);
-                  });
-                }
-              },
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    OnBoardingCubit.get(context).isLast?'Get Started':'Next',
-                    style: AppStyles.textStyle22.copyWith(
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  Baseline(
-                    baseline: AppConstants.iconSize28,
-                    baselineType: TextBaseline.alphabetic,
-                    child: Icon(
-                      IconBroken.Arrow___Right,
-                      color: Colors.white,
-                      size: AppConstants.iconSize28,
-                    ),
-                  )
-                ],
-              )),
-        ),
-      );
-    },);
+                    Baseline(
+                      baseline: AppConstants.iconSize28,
+                      baselineType: TextBaseline.alphabetic,
+                      child: Icon(
+                        IconBroken.Arrow___Right,
+                        color: Colors.white,
+                        size: AppConstants.iconSize28,
+                      ),
+                    )
+                  ],
+                )),
+          ),
+        );
+      },
+    );
   }
 }
 

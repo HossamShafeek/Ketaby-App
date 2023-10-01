@@ -7,7 +7,6 @@ import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/widgets/background_image.dart';
 import 'package:ketaby/feature/onboarding/presentation/views/widgets/onboarding_view_body.dart';
 
-
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({Key? key}) : super(key: key);
 
@@ -18,14 +17,14 @@ class OnBoardingView extends StatelessWidget {
         BackgroundImage(
           imagePath: AppAssets.splashImage,
         ),
-      const Scaffold(
-        backgroundColor: AppColors.transparent,
-      resizeToAvoidBottomInset: false,
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: AppConstants.systemUiOverlayStyleDark,
-        child: OnBoardingViewBody(),
-      ),
-    )
+        const Scaffold(
+          backgroundColor: AppColors.transparent,
+          resizeToAvoidBottomInset: false,
+          body: AnnotatedRegion<SystemUiOverlayStyle>(
+            value: AppConstants.systemUiOverlayStyleDark,
+            child: OnBoardingViewBody(),
+          ),
+        )
       ],
     );
   }

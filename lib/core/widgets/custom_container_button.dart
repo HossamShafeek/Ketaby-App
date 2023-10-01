@@ -7,11 +7,11 @@ class CustomContainerButton extends StatelessWidget {
       {Key? key,
       required this.onTap,
       required this.icon,
-       this.padding,
+      this.padding,
       required this.color,
-       this.radius,
-       this.backgroundColor,
-       this.iconSize})
+      this.radius,
+      this.backgroundColor,
+      this.iconSize})
       : super(key: key);
 
   final void Function() onTap;
@@ -28,15 +28,18 @@ class CustomContainerButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-          padding: EdgeInsets.all(padding??AppConstants.padding3h,),
+          padding: EdgeInsets.all(
+            padding ?? AppConstants.padding3h,
+          ),
           decoration: BoxDecoration(
-            color: backgroundColor??AppColors.white,
-            borderRadius: BorderRadius.circular(radius??AppConstants.radius5sp),
+            color: backgroundColor ?? AppColors.white,
+            borderRadius:
+                BorderRadius.circular(radius ?? AppConstants.radius5sp),
           ),
           child: Icon(
             icon,
             color: color,
-            size: iconSize??AppConstants.iconSize22,
+            size: iconSize ?? AppConstants.iconSize22,
           )),
     );
   }

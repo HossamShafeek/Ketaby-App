@@ -6,7 +6,6 @@ import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/widgets/background_image.dart';
 import 'package:ketaby/feature/authentication/presentation/views/widgets/login_view_body.dart';
 
-
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
 
@@ -17,14 +16,14 @@ class LoginView extends StatelessWidget {
         BackgroundImage(
           imagePath: AppAssets.backgroundImage,
         ),
-      const Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.transparent,
-      body: AnnotatedRegion(
-        value: AppConstants.systemUiOverlayStyleDark,
-        child: LoginViewBody(),
-      ),
-    )
+        const Scaffold(
+          resizeToAvoidBottomInset: false,
+          backgroundColor: AppColors.transparent,
+          body: AnnotatedRegion(
+            value: AppConstants.systemUiOverlayStyleDark,
+            child: LoginViewBody(),
+          ),
+        )
       ],
     );
   }

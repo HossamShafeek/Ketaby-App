@@ -4,7 +4,6 @@ import 'package:ketaby/config/routes/app_routes.dart';
 import 'package:ketaby/feature/home/presentation/cubits/animated_drawer_cubit/animated_drawer_cubit.dart';
 import 'package:ketaby/feature/home/presentation/views/widgets/drawer_buttons_section_item.dart';
 
-
 class DrawerButtonsSection extends StatelessWidget {
   const DrawerButtonsSection({Key? key}) : super(key: key);
 
@@ -46,6 +45,7 @@ class DrawerButtonsSection extends StatelessWidget {
           title: 'Profile',
           icon: IconBroken.Profile,
           onTap: () {
+            Navigator.pushNamed(context, Routes.profile);
             AnimatedDrawerCubit.get(context).closeDrawer();
           },
         ),

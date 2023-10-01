@@ -51,13 +51,13 @@ class LoginViewBody extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     TitleAndSubtitle(
+                    TitleAndSubtitle(
                       subtitle: AppStrings.signInSubtitle,
                       title: AppStrings.signIn,
-                       buttonTitle: AppStrings.signUp,
-                       onPressed: (){
+                      buttonTitle: AppStrings.signUp,
+                      onPressed: () {
                         Navigator.pushNamed(context, Routes.registerView);
-                       },
+                      },
                     ),
                     const LoginTextsFieldsSection(),
                     const KeepMeLoggedIn(),

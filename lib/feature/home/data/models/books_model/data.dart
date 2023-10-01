@@ -1,4 +1,3 @@
-
 import 'product.dart';
 
 class Data {
@@ -15,5 +14,4 @@ class Data {
   Map<String, dynamic> toJson() => {
         'products': products?.map((e) => e.toJson()).toList(),
       };
-
 }

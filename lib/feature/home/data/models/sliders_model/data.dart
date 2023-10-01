@@ -1,4 +1,3 @@
-
 import 'slider.dart';
 
 class Data {
@@ -15,5 +14,4 @@ class Data {
   Map<String, dynamic> toJson() => {
         'sliders': sliders?.map((e) => e.toJson()).toList(),
       };
-
 }

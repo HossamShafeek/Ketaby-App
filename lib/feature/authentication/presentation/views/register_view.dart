@@ -5,7 +5,6 @@ import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/widgets/background_image.dart';
 import 'package:ketaby/feature/authentication/presentation/views/widgets/register_view_body.dart';
 
-
 class RegisterView extends StatelessWidget {
   const RegisterView({Key? key}) : super(key: key);
 
@@ -16,14 +15,14 @@ class RegisterView extends StatelessWidget {
         BackgroundImage(
           imagePath: AppAssets.backgroundImage,
         ),
-     const  Scaffold(
-       backgroundColor: AppColors.transparent,
-      resizeToAvoidBottomInset: false,
-      body: AnnotatedRegion(
-        value: AppConstants.systemUiOverlayStyleDark,
-        child: RegisterViewBody(),
-      ),
-    )
+        const Scaffold(
+          backgroundColor: AppColors.transparent,
+          resizeToAvoidBottomInset: false,
+          body: AnnotatedRegion(
+            value: AppConstants.systemUiOverlayStyleDark,
+            child: RegisterViewBody(),
+          ),
+        )
       ],
     );
   }

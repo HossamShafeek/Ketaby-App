@@ -6,7 +6,6 @@ import 'package:ketaby/core/errors/failures.dart';
 import 'package:ketaby/feature/authentication/data/models/authentication_model/authentication_model.dart';
 import 'package:ketaby/feature/authentication/data/repository/authentication_repository.dart';
 
-
 class AuthenticationRepositoryImplementation extends AuthenticationRepository {
   final ApiServices apiServices;
 

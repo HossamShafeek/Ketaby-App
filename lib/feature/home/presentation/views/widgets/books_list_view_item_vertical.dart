@@ -15,7 +15,7 @@ class BooksListViewItemVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width??0,
+      width: width ?? 0,
       decoration: BoxDecoration(
         color: AppColors.grey50,
         borderRadius: BorderRadius.circular(AppConstants.radius10sp),
@@ -33,7 +33,7 @@ class BooksListViewItemVertical extends StatelessWidget {
               Expanded(
                 child: CustomNetworkImage(
                   borderRadius: AppConstants.radius8sp,
-                  image:product.image!,
+                  image: product.image!,
                 ),
               ),
               Padding(

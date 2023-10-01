@@ -13,7 +13,7 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding:  EdgeInsets.only(top:AppConstants.padding20h),
+        padding: EdgeInsets.only(top: AppConstants.padding20h),
         child: SlideTransitionAnimation(
           duration: const Duration(seconds: 2),
           begin: const Offset(0, 0.1),
