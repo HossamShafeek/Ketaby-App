@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ketaby/config/icons/icons_broken.dart';
 import 'package:ketaby/config/local/cache_helper.dart';
 import 'package:ketaby/config/routes/app_routes.dart';

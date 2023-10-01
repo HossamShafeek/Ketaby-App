@@ -54,7 +54,7 @@ class NewArrivalsGridView extends StatelessWidget {
                   return StaggeredTile.count(1, index.isEven ? 1.2 : 1);
                 },
                 itemBuilder: (context, index) => BooksListViewItemVertical(
-                  product: state.bestSellerModel.data!.products![index],
+                  book: state.bestSellerModel.data!.products![index],
                 ),
               ),
             ],

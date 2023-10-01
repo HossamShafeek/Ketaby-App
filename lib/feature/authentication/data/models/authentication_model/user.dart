@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 
 class User {
   int? id;
@@ -42,23 +41,4 @@ class User {
         'email_verified': emailVerified,
         'image': image,
       };
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    if (other is! User) return false;
-    final mapEquals = const DeepCollectionEquality().equals;
-    return mapEquals(other.toJson(), toJson());
-  }
-
-  @override
-  int get hashCode =>
-      id.hashCode ^
-      name.hashCode ^
-      email.hashCode ^
-      address.hashCode ^
-      city.hashCode ^
-      phone.hashCode ^
-      emailVerified.hashCode ^
-      image.hashCode;
 }

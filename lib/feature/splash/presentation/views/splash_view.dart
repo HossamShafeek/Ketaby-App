@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ketaby/config/local/cache_helper.dart';
 import 'package:ketaby/config/routes/app_routes.dart';
 import 'package:ketaby/core/utils/app_assets.dart';

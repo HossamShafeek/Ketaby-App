@@ -9,6 +9,7 @@ import 'package:ketaby/feature/authentication/presentation/cubits/login_cubit/lo
 import 'package:ketaby/feature/authentication/presentation/cubits/register_cubit/register_cubit.dart';
 import 'package:ketaby/feature/authentication/presentation/views/login_view.dart';
 import 'package:ketaby/feature/authentication/presentation/views/register_view.dart';
+import 'package:ketaby/feature/home/data/models/books_model/product.dart';
 import 'package:ketaby/feature/home/data/repository/home_repository_implementaion.dart';
 import 'package:ketaby/feature/home/presentation/cubits/animated_drawer_cubit/animated_drawer_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/best_seller_cubit/best_seller_cubit.dart';
@@ -16,6 +17,7 @@ import 'package:ketaby/feature/home/presentation/cubits/books_cubit/books_cubit.
 import 'package:ketaby/feature/home/presentation/cubits/categories_cubit/categories_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/new_arrivals_cubit/new_arrivals_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/sliders_cubit/sliders_cubit_cubit.dart';
+import 'package:ketaby/feature/home/presentation/views/book_details_view.dart';
 import 'package:ketaby/feature/home/presentation/views/books_view.dart';
 import 'package:ketaby/feature/home/presentation/views/layout_view.dart';
 import 'package:ketaby/feature/onboarding/presentation/cubit/onboarding_cubit.dart';
@@ -77,6 +79,12 @@ class AppRoutes {
                 HomeRepositoryImplementation(ApiServicesImplementation())),
             child: const BooksView(),
           ),
+        );
+        case Routes.bookDetailsView:
+          final book = settings.arguments as Product;
+        return PageSlideTransition(
+          direction: AxisDirection.left,
+          page:  BookDetailsView(book: book),
         );
         case Routes.profile:
         return PageSlideTransition(

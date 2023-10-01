@@ -11,6 +11,7 @@ class AppStrings {
   static const String password = 'password';
   static const String enterPassword = 'Enter your password';
   static const String keepMeLoggedIn = 'Keep me logged in';
+  static const String logout = 'Logout';
   static const String viewAll = 'View All';
   static const String bestSeller = 'Best Seller';
   static const String categories = 'Categories';

@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 
 import 'data.dart';
 
@@ -27,16 +26,4 @@ class AuthenticationModel {
         'error': error,
         'status': status,
       };
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    if (other is! AuthenticationModel) return false;
-    final mapEquals = const DeepCollectionEquality().equals;
-    return mapEquals(other.toJson(), toJson());
-  }
-
-  @override
-  int get hashCode =>
-      data.hashCode ^ message.hashCode ^ error.hashCode ^ status.hashCode;
 }

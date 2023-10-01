@@ -48,7 +48,7 @@ class BestSellerListView extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return BooksListViewItemVertical(
-                        product: state.bestSellerModel.data!.products![index],
+                        book: state.bestSellerModel.data!.products![index],
                         width: 120.w,
                       );
                     },

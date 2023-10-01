@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ketaby/config/local/cache_helper.dart';
 import 'package:ketaby/config/routes/app_routes.dart';
 import 'package:ketaby/core/functions/show_snack_bar.dart';
+import 'package:ketaby/core/utils/app_colors.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/utils/app_strings.dart';
+import 'package:ketaby/core/utils/app_styles.dart';
 import 'package:ketaby/core/widgets/gradient_button.dart';
 import 'package:ketaby/feature/authentication/presentation/views/widgets/title_and_subtitle.dart';
 import 'package:ketaby/feature/authentication/presentation/cubits/login_cubit/login_cubit.dart';
@@ -70,7 +72,10 @@ class LoginViewBody extends StatelessWidget {
                           LoginCubit.get(context).userLogin();
                         }
                       },
-                      title: AppStrings.signIn,
+                      title: Text(
+                        AppStrings.signIn,
+                        style: AppStyles.textStyle16.copyWith(color: AppColors.white),
+                      ),
                     ),
                   ],
                 ),

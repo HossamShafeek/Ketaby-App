@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ketaby/core/utils/app_colors.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/utils/app_styles.dart';
-import 'package:ketaby/feature/authentication/presentation/cubits/login_cubit/login_cubit.dart';
-import 'package:ketaby/feature/authentication/presentation/cubits/login_cubit/login_state.dart';
 import 'package:ketaby/feature/home/presentation/views/widgets/drawer_user_photp.dart';
 
 class DrawerUserData extends StatelessWidget {
