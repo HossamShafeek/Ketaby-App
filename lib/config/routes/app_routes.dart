@@ -12,9 +12,11 @@ import 'package:ketaby/feature/authentication/presentation/views/register_view.d
 import 'package:ketaby/feature/home/data/repository/home_repository_implementaion.dart';
 import 'package:ketaby/feature/home/presentation/cubits/animated_drawer_cubit/animated_drawer_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/best_seller_cubit/best_seller_cubit.dart';
+import 'package:ketaby/feature/home/presentation/cubits/books_cubit/books_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/categories_cubit/categories_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/new_arrivals_cubit/new_arrivals_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/sliders_cubit/sliders_cubit_cubit.dart';
+import 'package:ketaby/feature/home/presentation/views/books_view.dart';
 import 'package:ketaby/feature/home/presentation/views/layout_view.dart';
 import 'package:ketaby/feature/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:ketaby/feature/onboarding/presentation/views/onboarding_view.dart';
@@ -27,6 +29,8 @@ class Routes {
   static const String loginView = '/login_view';
   static const String layoutView = '/layout_view';
   static const String searchView = '/search_view';
+  static const String booksView = '/books_view';
+  static const String bookDetailsView = '/book_details_view';
 }
 
 class AppRoutes {
@@ -59,6 +63,16 @@ class AppRoutes {
                 AuthenticationRepositoryImplementation(
                     ApiServicesImplementation())),
             child: const RegisterView(),
+          ),
+        );
+        case Routes.booksView:
+        return PageSlideTransition(
+          direction: AxisDirection.left,
+          page: BlocProvider(
+            create: (context) => BooksCubit(
+                HomeRepositoryImplementation(
+                    ApiServicesImplementation())),
+            child: const BooksView(),
           ),
         );
       case Routes.layoutView:

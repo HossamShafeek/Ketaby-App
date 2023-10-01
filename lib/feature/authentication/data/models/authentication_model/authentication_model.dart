@@ -1,28 +1,42 @@
+import 'package:collection/collection.dart';
+
 import 'data.dart';
 
 class AuthenticationModel {
-  String? message;
   Data? data;
-  bool? status;
-  int? code;
+  String? message;
+  List<dynamic>? error;
+  int? status;
 
-  AuthenticationModel({this.message, this.data, this.status, this.code});
+  AuthenticationModel({this.data, this.message, this.error, this.status});
 
   factory AuthenticationModel.fromJson(Map<String, dynamic> json) {
     return AuthenticationModel(
-      message: json['message'] as String?,
       data: json['data'] == null
           ? null
           : Data.fromJson(json['data'] as Map<String, dynamic>),
-      status: json['status'] as bool?,
-      code: json['code'] as int?,
+      message: json['message'] as String?,
+      error: json['error'] as List<dynamic>?,
+      status: json['status'] as int?,
     );
   }
 
   Map<String, dynamic> toJson() => {
-        'message': message,
         'data': data?.toJson(),
+        'message': message,
+        'error': error,
         'status': status,
-        'code': code,
       };
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    if (other is! AuthenticationModel) return false;
+    final mapEquals = const DeepCollectionEquality().equals;
+    return mapEquals(other.toJson(), toJson());
+  }
+
+  @override
+  int get hashCode =>
+      data.hashCode ^ message.hashCode ^ error.hashCode ^ status.hashCode;
 }

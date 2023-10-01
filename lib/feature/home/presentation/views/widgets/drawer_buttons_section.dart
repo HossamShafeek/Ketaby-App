@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ketaby/config/icons/icons_broken.dart';
+import 'package:ketaby/config/routes/app_routes.dart';
 import 'package:ketaby/feature/home/presentation/cubits/animated_drawer_cubit/animated_drawer_cubit.dart';
 import 'package:ketaby/feature/home/presentation/views/widgets/drawer_buttons_section_item.dart';
 
@@ -23,6 +24,7 @@ class DrawerButtonsSection extends StatelessWidget {
           title: 'Books',
           icon: IconBroken.Document,
           onTap: () {
+            Navigator.pushNamed(context, Routes.booksView);
             AnimatedDrawerCubit.get(context).closeDrawer();
           },
         ),

@@ -30,7 +30,6 @@ class DrawerUserData extends StatelessWidget {
             ),
             Text(
               'hossamshafik55@gmail.com',
-              //LoginCubit.get(context).loginModel!.data!.user!.email!,
               style: AppStyles.textStyle12,
             ),
           ],
