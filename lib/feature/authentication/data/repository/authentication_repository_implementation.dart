@@ -42,10 +42,13 @@ class AuthenticationRepositoryImplementation extends AuthenticationRepository {
     required String password,
   }) async {
     try {
-      Response data = await apiServices.post(endPoint: EndPoints.login, data: {
-        'email': email,
-        'password': password,
-      });
+      Response data = await apiServices.post(
+        endPoint: EndPoints.login,
+        data: {
+          'email': email,
+          'password': password,
+        },
+      );
       return Right(AuthenticationModel.fromJson(data.data));
     } catch (error) {
       if (error is DioError) {

@@ -9,6 +9,7 @@ class AppColors {
   static const Color indigo = Colors.indigo;
   static const Color indigoAccent = Colors.indigoAccent;
   static const Color greenAccent = Colors.greenAccent;
+  static const Color green = Colors.green;
   static const Color orangeAccent = Colors.orangeAccent;
   static const Color redAccent = Colors.redAccent;
   static const Color deepPurpleAccent = Colors.deepPurpleAccent;

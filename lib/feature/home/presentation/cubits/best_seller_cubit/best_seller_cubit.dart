@@ -6,7 +6,7 @@ import 'package:ketaby/feature/home/data/repository/home_repository.dart';
 import 'package:ketaby/feature/home/presentation/cubits/best_seller_cubit/best_seller_state.dart';
 
 class BestSellerCubit extends Cubit<BestSellerState> {
-  BestSellerCubit(this.homeRepository) : super(BestSellerInitial());
+  BestSellerCubit(this.homeRepository) : super(BestSellerInitialstate());
 
   final HomeRepository homeRepository;
 

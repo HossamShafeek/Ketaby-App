@@ -54,7 +54,8 @@ class RegisterViewBody extends StatelessWidget {
                     GradientButton(
                       title: Text(
                         AppStrings.signUp,
-                        style: AppStyles.textStyle16.copyWith(color: AppColors.white),
+                        style: AppStyles.textStyle16
+                            .copyWith(color: AppColors.white),
                       ),
                       onPressed: () {
                         if (RegisterCubit.get(context)

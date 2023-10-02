@@ -1,4 +1,3 @@
-
 import 'user.dart';
 
 class Data {
@@ -18,6 +17,4 @@ class Data {
         'user': user?.toJson(),
         'token': token,
       };
-
-
 }

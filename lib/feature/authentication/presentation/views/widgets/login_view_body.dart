@@ -74,7 +74,8 @@ class LoginViewBody extends StatelessWidget {
                       },
                       title: Text(
                         AppStrings.signIn,
-                        style: AppStyles.textStyle16.copyWith(color: AppColors.white),
+                        style: AppStyles.textStyle16
+                            .copyWith(color: AppColors.white),
                       ),
                     ),
                   ],

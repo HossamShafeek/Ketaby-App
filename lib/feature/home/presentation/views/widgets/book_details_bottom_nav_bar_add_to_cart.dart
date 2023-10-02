@@ -27,6 +27,12 @@ class BookDetailBottomNavBarAddToCart extends StatelessWidget {
                 ),
               ),
               Text(
+                '${book.price} EPG',
+                style: AppStyles.textStyle13.copyWith(
+                    //color: AppColors.indigo,
+                    ),
+              ),
+              Text(
                 'Price',
                 style: AppStyles.textStyle15.copyWith(color: AppColors.black),
               ),

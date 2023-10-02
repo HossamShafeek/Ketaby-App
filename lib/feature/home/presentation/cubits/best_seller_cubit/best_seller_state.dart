@@ -2,7 +2,7 @@ import 'package:ketaby/feature/home/data/models/books_model/books_model.dart';
 
 abstract class BestSellerState {}
 
-final class BestSellerInitial extends BestSellerState {}
+final class BestSellerInitialstate extends BestSellerState {}
 
 class BestSellerLoadingState extends BestSellerState {}
 

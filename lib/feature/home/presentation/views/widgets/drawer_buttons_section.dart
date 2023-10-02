@@ -31,6 +31,7 @@ class DrawerButtonsSection extends StatelessWidget {
           title: 'Favourites',
           icon: IconBroken.Heart,
           onTap: () {
+            Navigator.pushNamed(context, Routes.favouritesView);
             AnimatedDrawerCubit.get(context).closeDrawer();
           },
         ),
@@ -45,7 +46,7 @@ class DrawerButtonsSection extends StatelessWidget {
           title: 'Profile',
           icon: IconBroken.Profile,
           onTap: () {
-            Navigator.pushNamed(context, Routes.profile);
+            Navigator.pushNamed(context, Routes.profileView);
             AnimatedDrawerCubit.get(context).closeDrawer();
           },
         ),

@@ -70,7 +70,8 @@ class ProfileViewBody extends StatelessWidget {
                     },
                     title: Text(
                       AppStrings.logout,
-                      style: AppStyles.textStyle16.copyWith(color: AppColors.white),
+                      style: AppStyles.textStyle16
+                          .copyWith(color: AppColors.white),
                     ),
                   ),
                 ],

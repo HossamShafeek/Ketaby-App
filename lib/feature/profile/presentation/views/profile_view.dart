@@ -16,7 +16,6 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-
   @override
   void initState() {
     GetUserProfileCubit.get(context).getUserProfile();
@@ -30,9 +29,9 @@ class _ProfileViewState extends State<ProfileView> {
         BackgroundImage(
           imagePath: AppAssets.backgroundImage,
         ),
-         Scaffold(
+        Scaffold(
           appBar: AppBar(
-            leading:const  CustomBackButton(),
+            leading: const CustomBackButton(),
             backgroundColor: AppColors.transparent,
             title: const Text(AppStrings.profile),
           ),

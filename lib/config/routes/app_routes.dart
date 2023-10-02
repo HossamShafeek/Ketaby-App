@@ -9,6 +9,10 @@ import 'package:ketaby/feature/authentication/presentation/cubits/login_cubit/lo
 import 'package:ketaby/feature/authentication/presentation/cubits/register_cubit/register_cubit.dart';
 import 'package:ketaby/feature/authentication/presentation/views/login_view.dart';
 import 'package:ketaby/feature/authentication/presentation/views/register_view.dart';
+import 'package:ketaby/feature/favourites/data/repository/favourites_repository_implementation.dart';
+import 'package:ketaby/feature/favourites/presentation/cubits/add_and_remove_favourites_cubit/add_and_remove_favourites_cubit.dart';
+import 'package:ketaby/feature/favourites/presentation/cubits/get_favourites_cubit/get_favourites_cubit.dart';
+import 'package:ketaby/feature/favourites/presentation/view/favourites_view.dart';
 import 'package:ketaby/feature/home/data/models/books_model/product.dart';
 import 'package:ketaby/feature/home/data/repository/home_repository_implementaion.dart';
 import 'package:ketaby/feature/home/presentation/cubits/animated_drawer_cubit/animated_drawer_cubit.dart';
@@ -36,7 +40,8 @@ class Routes {
   static const String searchView = '/search_view';
   static const String booksView = '/books_view';
   static const String bookDetailsView = '/book_details_view';
-  static const String profile = '/profile_view';
+  static const String profileView = '/profile_view';
+  static const String favouritesView = '/favourites_view';
 }
 
 class AppRoutes {
@@ -80,19 +85,30 @@ class AppRoutes {
             child: const BooksView(),
           ),
         );
-        case Routes.bookDetailsView:
-          final book = settings.arguments as Product;
+      case Routes.bookDetailsView:
+        final book = settings.arguments as Product;
         return PageSlideTransition(
           direction: AxisDirection.left,
-          page:  BookDetailsView(book: book),
+          page: BookDetailsView(book: book),
         );
-        case Routes.profile:
+      case Routes.profileView:
         return PageSlideTransition(
           direction: AxisDirection.left,
           page: BlocProvider(
             create: (context) => GetUserProfileCubit(
                 ProfileRepositoryImplementation(ApiServicesImplementation())),
             child: const ProfileView(),
+          ),
+        );
+      case Routes.favouritesView:
+        return PageSlideTransition(
+          direction: AxisDirection.left,
+          page: BlocProvider(
+            create: (context) => GetFavouritesCubit(
+                FavouritesRepositoryImplementation(ApiServicesImplementation()),
+                AddAndRemoveFavouritesCubit(FavouritesRepositoryImplementation(
+                    ApiServicesImplementation()))),
+            child: const FavouritesView(),
           ),
         );
       case Routes.layoutView:

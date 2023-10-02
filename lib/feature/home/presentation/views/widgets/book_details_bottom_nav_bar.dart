@@ -45,10 +45,20 @@ class BookDetailBottomNavBar extends StatelessWidget {
                   top: AppConstants.padding10h,
                   bottom: AppConstants.padding5h,
                 ),
-                child: Text(
-                  'About',
-                  style:
-                      AppStyles.textStyle18.copyWith(color: AppColors.indigo),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'About',
+                      style: AppStyles.textStyle18
+                          .copyWith(color: AppColors.indigo),
+                    ),
+                    Text(
+                      'Discount: ${book.discount}%',
+                      style: AppStyles.textStyle16
+                          .copyWith(color: AppColors.green),
+                    ),
+                  ],
                 ),
               ),
               Expanded(
@@ -62,7 +72,7 @@ class BookDetailBottomNavBar extends StatelessWidget {
                   ),
                 ),
               ),
-              BookDetailBottomNavBarAddToCart(book:book),
+              BookDetailBottomNavBarAddToCart(book: book),
             ],
           ),
         ),

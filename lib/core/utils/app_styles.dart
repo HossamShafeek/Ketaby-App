@@ -8,9 +8,10 @@ abstract class AppStyles {
     color: AppColors.white,
   );
   static final textStyle13 = TextStyle(
-      fontSize: 11.sp,
-      color: AppColors.grey,
-      decoration: TextDecoration.lineThrough);
+    fontSize: 11.sp,
+    color: AppColors.grey,
+    decoration: TextDecoration.lineThrough,
+  );
   static final textStyle14 = TextStyle(fontSize: 12.sp, color: AppColors.grey);
   static final textStyle15 = TextStyle(
     fontSize: 13.sp,

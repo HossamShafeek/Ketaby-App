@@ -18,4 +18,5 @@ class AppStrings {
   static const String newArrivals = 'New Arrivals';
   static const String profile = 'Profile';
   static const String books = 'Books';
+  static const String favourites = 'Favourites';
 }

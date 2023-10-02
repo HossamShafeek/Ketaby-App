@@ -23,9 +23,9 @@ class Data {
         id: json['id'] as int?,
         name: json['name'] as String?,
         email: json['email'] as String?,
-        address: json['address']??'Address',
-        city: json['city']??'City' ,
-        phone: json['phone'] ??'0000000000',
+        address: json['address'] ?? 'Address',
+        city: json['city'] ?? 'City',
+        phone: json['phone'] ?? '0000000000',
         emailVerified: json['email_verified'] as bool?,
         image: json['image'] as String?,
       );

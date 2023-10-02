@@ -7,20 +7,22 @@ import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/utils/app_styles.dart';
 import 'package:ketaby/core/widgets/custom_container_button.dart';
 import 'package:ketaby/core/widgets/custom_network_image.dart';
+import 'package:ketaby/feature/favourites/presentation/cubits/add_and_remove_favourites_cubit/add_and_remove_favourites_cubit.dart';
 import 'package:ketaby/feature/home/data/models/books_model/product.dart';
 
 class BooksListViewItemHorizontal extends StatelessWidget {
-  const BooksListViewItemHorizontal({Key? key, required this.book})
+  const BooksListViewItemHorizontal(
+      {Key? key, required this.book, required this.index})
       : super(key: key);
 
   final Product book;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.bookDetailsView,
-            arguments: book);
+        Navigator.pushNamed(context, Routes.bookDetailsView, arguments: book);
       },
       child: Container(
         padding: EdgeInsets.all(AppConstants.padding10h),
@@ -87,7 +89,11 @@ class BooksListViewItemHorizontal extends StatelessWidget {
                         ),
                         const Spacer(),
                         CustomContainerButton(
-                          onTap: () {},
+                          onTap: () {
+                            AddAndRemoveFavouritesCubit.get(context).addToFavourites(
+                              bookId: book.id.toString(),
+                            );
+                          },
                           icon: IconBroken.Heart,
                           color: AppColors.redAccent,
                         ),

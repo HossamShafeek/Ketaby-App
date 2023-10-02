@@ -21,8 +21,7 @@ class BookDetailsViewBody extends StatelessWidget {
             image: book.image!,
           ),
           Padding(
-            padding:
-            EdgeInsets.only(left: AppConstants.padding15h, top: 33.h),
+            padding: EdgeInsets.only(left: AppConstants.padding15h, top: 33.h),
             child: CircleAvatar(
               backgroundColor: Colors.black.withOpacity(0.25),
               radius: AppConstants.radius20sp,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ketaby/core/utils/app_assets.dart';
 import 'package:ketaby/core/utils/app_colors.dart';
 
-
 class ImageUserProfile extends StatelessWidget {
   const ImageUserProfile({Key? key}) : super(key: key);
 

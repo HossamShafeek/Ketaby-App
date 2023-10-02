@@ -16,8 +16,8 @@ class BooksListViewItemVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.pushNamed(context, Routes.bookDetailsView,arguments: book);
+      onTap: () {
+        Navigator.pushNamed(context, Routes.bookDetailsView, arguments: book);
       },
       child: Container(
         width: width ?? 0,
@@ -42,7 +42,8 @@ class BooksListViewItemVertical extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: AppConstants.padding3h),
+                  padding:
+                      EdgeInsets.symmetric(vertical: AppConstants.padding3h),
                   child: Text(
                     book.name!,
                     maxLines: 1,
@@ -53,7 +54,8 @@ class BooksListViewItemVertical extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: AppConstants.padding3h),
+                  padding:
+                      EdgeInsets.symmetric(vertical: AppConstants.padding3h),
                   child: Text(
                     book.category!,
                     maxLines: 1,
