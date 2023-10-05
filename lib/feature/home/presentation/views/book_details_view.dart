@@ -33,21 +33,19 @@ class BookDetailsView extends StatelessWidget {
           book: book,
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-        floatingActionButton: BlocConsumer<GetFavouritesCubit,GetFavouritesState>(
-          listener: (context, state) {
-
-          },
+        floatingActionButton:
+            BlocConsumer<GetFavouritesCubit, GetFavouritesState>(
+          listener: (context, state) {},
           builder: (context, state) {
             return FloatingActionButton(
               onPressed: () {
-                if (GetFavouritesCubit.get(context)
-                    .products
-                    .contains(book)) {
+                if (GetFavouritesCubit.get(context).products.contains(book)) {
                   RemoveFromFavouritesCubit.get(context)
                       .removeFromFavourites(
                     bookId: book.id.toString(),
                     context: context,
-                  ).then((value){
+                  )
+                      .then((value) {
                     GetFavouritesCubit.get(context).getFavourites();
                   });
                 } else {
@@ -55,19 +53,18 @@ class BookDetailsView extends StatelessWidget {
                       .addToFavourites(
                     bookId: book.id.toString(),
                     context: context,
-                  ).then((value) {
+                  )
+                      .then((value) {
                     GetFavouritesCubit.get(context).getFavourites();
                   });
-
                 }
               },
               backgroundColor: AppColors.white,
               child: Icon(
                 IconBroken.Heart,
-                color: GetFavouritesCubit
-                    .get(context)
-                    .products
-                    .contains(book) ? AppColors.redAccent :AppColors.grey,
+                color: GetFavouritesCubit.get(context).products.contains(book)
+                    ? AppColors.redAccent
+                    : AppColors.grey,
                 size: AppConstants.iconSize22,
               ),
             );

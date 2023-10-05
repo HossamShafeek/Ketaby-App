@@ -12,6 +12,7 @@ import 'package:ketaby/feature/home/presentation/cubits/new_arrivals_cubit/new_a
 import 'package:ketaby/feature/home/presentation/cubits/sliders_cubit/sliders_cubit_cubit.dart';
 import 'package:ketaby/feature/home/presentation/views/drawer_view.dart';
 import 'package:ketaby/feature/home/presentation/views/home_view.dart';
+import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_cubit/get_user_profile_cubit.dart';
 
 class LayoutView extends StatefulWidget {
   const LayoutView({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class _LayoutViewState extends State<LayoutView> {
     CategoriesCubit.get(context).getCategories();
     BestSellerCubit.get(context).getBestSeller();
     NewArrivalsCubit.get(context).getNewArrivals();
+    GetUserProfileCubit.get(context).getUserProfile();
     GetFavouritesCubit.get(context).getFavourites();
     GetCartCubit.get(context).getCart();
     super.initState();

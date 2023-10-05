@@ -27,9 +27,16 @@ import 'package:ketaby/feature/home/presentation/views/books_view.dart';
 import 'package:ketaby/feature/home/presentation/views/layout_view.dart';
 import 'package:ketaby/feature/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:ketaby/feature/onboarding/presentation/views/onboarding_view.dart';
-import 'package:ketaby/feature/profile/data/repositry/profile_repository_implementation.dart';
-import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_cubit.dart';
+import 'package:ketaby/feature/order/data/repository/order_repository_implementation.dart';
+import 'package:ketaby/feature/order/presentation/cubits/create_order_cubit/create_order_cubit.dart';
+import 'package:ketaby/feature/order/presentation/cubits/get_checkout_data_cubit/get_checkout_data_cubit.dart';
+import 'package:ketaby/feature/order/presentation/cubits/get_governorates_cubit/get_governorates_cubit.dart';
+import 'package:ketaby/feature/order/presentation/views/checkout_view.dart';
+import 'package:ketaby/feature/profile/data/model/profile_model.dart';
+import 'package:ketaby/feature/profile/data/repository/profile_repository_implementation.dart';
+import 'package:ketaby/feature/profile/presentation/cubits/update_user_profile_cubit/update_user_profile_cubit.dart';
 import 'package:ketaby/feature/profile/presentation/views/profile_view.dart';
+import 'package:ketaby/feature/profile/presentation/views/update_profile_view.dart';
 import 'package:ketaby/feature/splash/presentation/views/splash_view.dart';
 
 class Routes {
@@ -42,8 +49,10 @@ class Routes {
   static const String booksView = '/books_view';
   static const String bookDetailsView = '/book_details_view';
   static const String profileView = '/profile_view';
+  static const String updateProfileView = '/update_profile_view';
   static const String favouritesView = '/favourites_view';
   static const String cartView = '/cart_view';
+  static const String checkoutView = '/checkout_view';
 }
 
 class AppRoutes {
@@ -62,9 +71,10 @@ class AppRoutes {
       case Routes.loginView:
         return PageFadeTransition(
           page: BlocProvider(
-            create: (context) => LoginCubit(
-                AuthenticationRepositoryImplementation(
-                    ApiServicesImplementation())),
+            create: (context) =>
+                LoginCubit(
+                    AuthenticationRepositoryImplementation(
+                        ApiServicesImplementation())),
             child: const LoginView(),
           ),
         );
@@ -72,9 +82,10 @@ class AppRoutes {
         return PageSlideTransition(
           direction: AxisDirection.left,
           page: BlocProvider(
-            create: (context) => RegisterCubit(
-                AuthenticationRepositoryImplementation(
-                    ApiServicesImplementation())),
+            create: (context) =>
+                RegisterCubit(
+                    AuthenticationRepositoryImplementation(
+                        ApiServicesImplementation())),
             child: const RegisterView(),
           ),
         );
@@ -82,8 +93,9 @@ class AppRoutes {
         return PageSlideTransition(
           direction: AxisDirection.left,
           page: BlocProvider(
-            create: (context) => BooksCubit(
-                HomeRepositoryImplementation(ApiServicesImplementation())),
+            create: (context) =>
+                BooksCubit(
+                    HomeRepositoryImplementation(ApiServicesImplementation())),
             child: const BooksView(),
           ),
         );
@@ -96,11 +108,17 @@ class AppRoutes {
       case Routes.profileView:
         return PageSlideTransition(
           direction: AxisDirection.left,
+          page: const ProfileView(),
+        );
+      case Routes.updateProfileView:
+        final profileModel = settings.arguments as ProfileModel;
+        return PageSlideTransition(
+          direction: AxisDirection.left,
           page: BlocProvider(
-            create: (context) => GetUserProfileCubit(
-                ProfileRepositoryImplementation(ApiServicesImplementation())),
-            child: const ProfileView(),
-          ),
+              create: (context) =>
+              UpdateUserProfileCubit(
+                  ProfileRepositoryImplementation(ApiServicesImplementation())),
+              child: UpdateProfileView(profileModel: profileModel,)),
         );
       case Routes.favouritesView:
         return PageSlideTransition(
@@ -112,16 +130,45 @@ class AppRoutes {
           direction: AxisDirection.left,
           page: MultiBlocProvider(providers: [
             BlocProvider(
-              create: (context) => UpdateCartCubit(
-                CartRepositoryImplementation(ApiServicesImplementation()),
-              ),
+              create: (context) =>
+                  UpdateCartCubit(
+                    CartRepositoryImplementation(ApiServicesImplementation()),
+                  ),
             ),
             BlocProvider(
-              create: (context) => RemoveFromCartCubit(
-                CartRepositoryImplementation(ApiServicesImplementation()),
-              ),
+              create: (context) =>
+                  RemoveFromCartCubit(
+                    CartRepositoryImplementation(ApiServicesImplementation()),
+                  ),
             ),
           ], child: const CartView()),
+        );
+      case Routes.checkoutView:
+        return PageSlideTransition(
+          direction: AxisDirection.left,
+          page: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) =>
+                    GetCheckoutDataCubit(
+                        OrderRepositoryImplementation(
+                            ApiServicesImplementation())),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    GetGovernoratesCubit(
+                        OrderRepositoryImplementation(
+                            ApiServicesImplementation())),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    CreateOrderCubit(
+                        OrderRepositoryImplementation(
+                            ApiServicesImplementation())),
+              ),
+            ],
+            child: const CheckoutView(),
+          ),
         );
       case Routes.layoutView:
         return PageSlideTransition(
@@ -131,20 +178,28 @@ class AppRoutes {
               create: (context) => AnimatedDrawerCubit(),
             ),
             BlocProvider(
-              create: (context) => SlidersCubit(
-                  HomeRepositoryImplementation(ApiServicesImplementation())),
+              create: (context) =>
+                  SlidersCubit(
+                      HomeRepositoryImplementation(
+                          ApiServicesImplementation())),
             ),
             BlocProvider(
-              create: (context) => BestSellerCubit(
-                  HomeRepositoryImplementation(ApiServicesImplementation())),
+              create: (context) =>
+                  BestSellerCubit(
+                      HomeRepositoryImplementation(
+                          ApiServicesImplementation())),
             ),
             BlocProvider(
-              create: (context) => CategoriesCubit(
-                  HomeRepositoryImplementation(ApiServicesImplementation())),
+              create: (context) =>
+                  CategoriesCubit(
+                      HomeRepositoryImplementation(
+                          ApiServicesImplementation())),
             ),
             BlocProvider(
-              create: (context) => NewArrivalsCubit(
-                  HomeRepositoryImplementation(ApiServicesImplementation())),
+              create: (context) =>
+                  NewArrivalsCubit(
+                      HomeRepositoryImplementation(
+                          ApiServicesImplementation())),
             ),
           ], child: const LayoutView()),
         );
@@ -154,11 +209,12 @@ class AppRoutes {
 
   static Route undefinedRoute() {
     return MaterialPageRoute(
-      builder: ((context) => const Scaffold(
-            body: Center(
-              child: Text(AppStrings.noRouteFound),
-            ),
-          )),
+      builder: ((context) =>
+      const Scaffold(
+        body: Center(
+          child: Text(AppStrings.noRouteFound),
+        ),
+      )),
     );
   }
 }

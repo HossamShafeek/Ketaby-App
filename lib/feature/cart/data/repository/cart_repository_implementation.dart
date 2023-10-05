@@ -30,8 +30,7 @@ class CartRepositoryImplementation extends CartRepository {
   }
 
   @override
-  Future<Either<Failure, CartModel>> addToCart(
-      {required String bookId}) async {
+  Future<Either<Failure, CartModel>> addToCart({required String bookId}) async {
     try {
       Response data = await apiServices.post(
         endPoint: EndPoints.addToCart,

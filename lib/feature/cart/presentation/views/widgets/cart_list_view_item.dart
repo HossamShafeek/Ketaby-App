@@ -60,9 +60,14 @@ class CartListViewItem extends StatelessWidget {
                       CustomContainerButton(
                         onTap: () {
                           RemoveFromCartCubit.get(context)
-                              .removeFromCart(bookId: book.itemId.toString(),context: context).then((value) {
-                                GetCartCubit.get(context).cartId.remove(book.itemProductId);
-                                GetCartCubit.get(context).getCart();
+                              .removeFromCart(
+                                  bookId: book.itemId.toString(),
+                                  context: context)
+                              .then((value) {
+                            GetCartCubit.get(context)
+                                .cartId
+                                .remove(book.itemProductId);
+                            GetCartCubit.get(context).getCart();
                           });
                         },
                         icon: IconBroken.Delete,

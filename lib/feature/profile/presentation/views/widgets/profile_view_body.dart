@@ -9,8 +9,8 @@ import 'package:ketaby/core/utils/app_styles.dart';
 import 'package:ketaby/core/widgets/custom_error_widget.dart';
 import 'package:ketaby/core/widgets/gradient_button.dart';
 import 'package:ketaby/core/widgets/loading_indicator_widget.dart';
-import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_cubit.dart';
-import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_state.dart';
+import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_cubit/get_user_profile_cubit.dart';
+import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_cubit/get_user_profile_state.dart';
 import 'package:ketaby/feature/profile/presentation/views/widgets/image_user_profile.dart';
 import 'package:ketaby/feature/profile/presentation/views/widgets/name_and_email_user_profile.dart';
 import 'package:ketaby/feature/profile/presentation/views/widgets/profile_item_widget.dart';
@@ -41,23 +41,28 @@ class ProfileViewBody extends StatelessWidget {
                   ProfileItemWidget(
                       title: 'Name',
                       content: state.profileModel.data!.name!,
-                      onTap: () {}),
+                    profileModel: state.profileModel,
+                      ),
                   ProfileItemWidget(
                       title: 'Email',
                       content: state.profileModel.data!.email!,
-                      onTap: () {}),
+                    profileModel: state.profileModel,
+                      ),
                   ProfileItemWidget(
                       title: 'Phone',
                       content: state.profileModel.data!.phone!,
-                      onTap: () {}),
+                    profileModel: state.profileModel,
+                      ),
                   ProfileItemWidget(
                       title: 'City',
                       content: state.profileModel.data!.city!,
-                      onTap: () {}),
+                    profileModel: state.profileModel,
+                      ),
                   ProfileItemWidget(
                       title: 'Address',
                       content: state.profileModel.data!.address!,
-                      onTap: () {}),
+                    profileModel: state.profileModel,
+                      ),
                   SizedBox(
                     height: AppConstants.padding20h,
                   ),

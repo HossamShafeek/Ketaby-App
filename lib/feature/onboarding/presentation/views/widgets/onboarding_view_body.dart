@@ -103,7 +103,10 @@ class SkipButton extends StatelessWidget {
       alignment: Alignment.topRight,
       child: TextButton(
           onPressed: () {
-            Navigator.popAndPushNamed(context, Routes.loginView);
+            CacheHelper.setBoolean(key: 'onBoarding', value: true)
+                .then((value) {
+              Navigator.pushReplacementNamed(context, Routes.loginView);
+            });
           },
           child: Text(
             'Skip',

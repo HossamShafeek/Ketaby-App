@@ -15,7 +15,7 @@ class GetCartCubit extends Cubit<GetCartState> {
   final CartRepository cartRepository;
 
   CartModel? cartModel;
-  List<int> cartId =[];
+  List<int> cartId = [];
 
   Future<void> getCart() async {
     emit(GetCartLoadingState());

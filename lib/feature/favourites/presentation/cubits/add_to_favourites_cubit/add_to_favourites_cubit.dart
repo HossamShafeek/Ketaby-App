@@ -16,7 +16,8 @@ class AddToFavouritesCubit extends Cubit<AddToFavouritesState> {
 
   final FavouritesRepository favouritesRepository;
 
-  Future<void> addToFavourites({required String bookId,required BuildContext context}) async {
+  Future<void> addToFavourites(
+      {required String bookId, required BuildContext context}) async {
     emit(AddToFavouritesLoadingState());
     Either<Failure, List<Product>> result;
     result = await favouritesRepository.addToFavourites(bookId: bookId);
@@ -24,9 +25,9 @@ class AddToFavouritesCubit extends Cubit<AddToFavouritesState> {
       showErrorSnackBar(context: context, message: failure.error);
       emit(AddToFavouritesFailureState(failure.error));
     }, (products) {
-      showSuccessSnackBar(context: context, message: 'Product Added To Favourites');
+      showSuccessSnackBar(
+          context: context, message: 'Product Added To Favourites');
       emit(AddToFavouritesSuccessState());
-
     });
   }
 }

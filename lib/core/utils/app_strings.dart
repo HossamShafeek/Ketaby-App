@@ -17,6 +17,7 @@ class AppStrings {
   static const String categories = 'Categories';
   static const String newArrivals = 'New Arrivals';
   static const String profile = 'Profile';
+  static const String updateProfile = 'Update Profile';
   static const String books = 'Books';
   static const String favourites = 'Favourites';
   static const String favouritesAreEmpty = 'Favourites are empty!';
@@ -24,5 +25,7 @@ class AppStrings {
   static const String cart = 'Cart';
   static const String addToCart = 'Add to cart';
   static const String inCart = 'In cart';
-  static const String checkout = 'CheckOut';
+  static const String checkout = 'Checkout';
+  static const String confirm = 'Confirm';
+  static const String order = 'Order';
 }

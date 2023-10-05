@@ -14,26 +14,30 @@ class CartViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GetCartCubit,GetCartState>(builder: (context, state) {
-      CartModel? cartModel = GetCartCubit.get(context).cartModel;
-      if(cartModel!.data!.cartItems!.isNotEmpty){
-        return  ListView.separated(
-          padding: EdgeInsets.all(AppConstants.defaultPadding),
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (context, index) {
-            return CartListViewItem(book: cartModel.data!.cartItems![index]);
-          },
-          separatorBuilder: (context, index) {
-            return SizedBox(height: AppConstants.padding10h,);
-          },
-          itemCount: cartModel.data!.cartItems!.length,
-        );
-      }else{
-        return CustomEmptyWidget(
-          imagePath: AppAssets.cartImage,
-          message: AppStrings.cartIsEmpty,
-        );
-      }
-    },);
+    return BlocBuilder<GetCartCubit, GetCartState>(
+      builder: (context, state) {
+        CartModel? cartModel = GetCartCubit.get(context).cartModel;
+        if (cartModel!.data!.cartItems!.isNotEmpty) {
+          return ListView.separated(
+            padding: EdgeInsets.all(AppConstants.defaultPadding),
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (context, index) {
+              return CartListViewItem(book: cartModel.data!.cartItems![index]);
+            },
+            separatorBuilder: (context, index) {
+              return SizedBox(
+                height: AppConstants.padding10h,
+              );
+            },
+            itemCount: cartModel.data!.cartItems!.length,
+          );
+        } else {
+          return CustomEmptyWidget(
+            imagePath: AppAssets.cartImage,
+            message: AppStrings.cartIsEmpty,
+          );
+        }
+      },
+    );
   }
 }

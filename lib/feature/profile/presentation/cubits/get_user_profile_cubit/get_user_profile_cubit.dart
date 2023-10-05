@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ketaby/core/errors/failures.dart';
 import 'package:ketaby/feature/profile/data/model/profile_model.dart';
-import 'package:ketaby/feature/profile/data/repositry/profile_repository.dart';
-import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_state.dart';
+import 'package:ketaby/feature/profile/data/repository/profile_repository.dart';
+import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_cubit/get_user_profile_state.dart';
 
 class GetUserProfileCubit extends Cubit<GetUserProfileState> {
   GetUserProfileCubit(this.profileRepository)

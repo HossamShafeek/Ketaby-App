@@ -13,16 +13,19 @@ class UpdateCartCubit extends Cubit<UpdateCartState> {
 
   final CartRepository cartRepository;
 
-  Future<void> updateCart(
-      {required String bookId, required String quantity,}) async {
+  Future<void> updateCart({
+    required String bookId,
+    required String quantity,
+  }) async {
     emit(UpdateCartLoadingState());
     Either<Failure, CartModel> result;
-    result = await cartRepository.updateCart(bookId: bookId, quantity:quantity);
+    result =
+        await cartRepository.updateCart(bookId: bookId, quantity: quantity);
     result.fold(
-          (failure) {
+      (failure) {
         emit(UpdateCartFailureState(failure.error));
       },
-          (cartModel) {
+      (cartModel) {
         emit(UpdateCartSuccessState());
       },
     );

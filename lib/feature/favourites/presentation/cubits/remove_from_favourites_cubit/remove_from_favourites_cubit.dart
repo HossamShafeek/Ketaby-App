@@ -16,7 +16,8 @@ class RemoveFromFavouritesCubit extends Cubit<RemoveFromFavouritesState> {
 
   final FavouritesRepository favouritesRepository;
 
-  Future<void> removeFromFavourites({required String bookId,required BuildContext context}) async {
+  Future<void> removeFromFavourites(
+      {required String bookId, required BuildContext context}) async {
     emit(RemoveFromFavouritesLoadingState());
     Either<Failure, List<Product>> result;
     result = await favouritesRepository.removeToFavourites(bookId: bookId);
@@ -24,7 +25,8 @@ class RemoveFromFavouritesCubit extends Cubit<RemoveFromFavouritesState> {
       showErrorSnackBar(context: context, message: failure.error);
       emit(RemoveFromFavouritesFailureState(failure.error));
     }, (products) {
-      showSuccessSnackBar(context: context, message: 'Product Removed From Favourites');
+      showSuccessSnackBar(
+          context: context, message: 'Product Removed From Favourites');
       emit(RemoveFromFavouritesSuccessState());
     });
   }

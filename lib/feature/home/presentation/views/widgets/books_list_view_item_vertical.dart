@@ -62,7 +62,8 @@ class BooksListViewItemVertical extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding:  EdgeInsets.symmetric(vertical:AppConstants.padding3h),
+                  padding:
+                      EdgeInsets.symmetric(vertical: AppConstants.padding3h),
                   child: Text(
                     '${book.priceAfterDiscount!} EGP',
                     style: AppStyles.textStyle15.copyWith(

@@ -10,6 +10,5 @@ abstract class CartRepository {
   Future<Either<Failure, CartModel>> updateCart(
       {required String bookId, required String quantity});
 
-  Future<Either<Failure,CartModel>> removeFromCart(
-      {required String bookId});
+  Future<Either<Failure, CartModel>> removeFromCart({required String bookId});
 }

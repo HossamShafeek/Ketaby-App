@@ -28,11 +28,10 @@ class ImageUserProfile extends StatelessWidget {
               color: AppColors.indigo,
               size: AppConstants.iconSize24,
             ),
-            imageBuilder: (context, imageProvider) =>
-                CircleAvatar(
-                  backgroundImage: imageProvider,
-                  radius: 68.sp,
-                ),
+            imageBuilder: (context, imageProvider) => CircleAvatar(
+              backgroundImage: imageProvider,
+              radius: 68.sp,
+            ),
           ),
         ),
       ),

@@ -23,7 +23,7 @@ class AddAndRemoveFromCartButton extends StatelessWidget {
           onTap: () {
             if (!GetCartCubit.get(context).cartId.contains(book.id)) {
               AddToCartCubit.get(context)
-                  .addToCart(bookId: book.id.toString(),context: context)
+                  .addToCart(bookId: book.id.toString(), context: context)
                   .then((value) {
                 GetCartCubit.get(context).cartId.add(book.id!);
                 GetCartCubit.get(context).getCart();

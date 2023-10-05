@@ -13,6 +13,8 @@ import 'package:ketaby/feature/favourites/data/repository/favourites_repository_
 import 'package:ketaby/feature/favourites/presentation/cubits/add_to_favourites_cubit/add_to_favourites_cubit.dart';
 import 'package:ketaby/feature/favourites/presentation/cubits/get_favourites_cubit/get_favourites_cubit.dart';
 import 'package:ketaby/feature/favourites/presentation/cubits/remove_from_favourites_cubit/remove_from_favourites_cubit.dart';
+import 'package:ketaby/feature/profile/data/repository/profile_repository_implementation.dart';
+import 'package:ketaby/feature/profile/presentation/cubits/get_user_profile_cubit/get_user_profile_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,28 +37,30 @@ class KetabyApp extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) => AddToFavouritesCubit(
-                FavouritesRepositoryImplementation(ApiServicesImplementation())
-              ),
+                  FavouritesRepositoryImplementation(
+                      ApiServicesImplementation())),
             ),
             BlocProvider(
               create: (context) => RemoveFromFavouritesCubit(
-                FavouritesRepositoryImplementation(ApiServicesImplementation())
-              ),
+                  FavouritesRepositoryImplementation(
+                      ApiServicesImplementation())),
             ),
             BlocProvider(
               create: (context) => GetFavouritesCubit(
-                FavouritesRepositoryImplementation(ApiServicesImplementation())
-              ),
+                  FavouritesRepositoryImplementation(
+                      ApiServicesImplementation())),
             ),
             BlocProvider(
               create: (context) => GetCartCubit(
-                CartRepositoryImplementation(ApiServicesImplementation())
-              ),
+                  CartRepositoryImplementation(ApiServicesImplementation())),
             ),
             BlocProvider(
               create: (context) => AddToCartCubit(
-                CartRepositoryImplementation(ApiServicesImplementation())
-              ),
+                  CartRepositoryImplementation(ApiServicesImplementation())),
+            ),
+            BlocProvider(
+              create: (context) => GetUserProfileCubit(
+                  ProfileRepositoryImplementation(ApiServicesImplementation())),
             ),
           ],
           child: MaterialApp(

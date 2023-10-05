@@ -22,9 +22,7 @@ class AddAndRemoveFromFavouritesButton extends StatelessWidget {
       builder: (context, state) {
         return CustomContainerButton(
           onTap: () {
-            if (GetFavouritesCubit.get(context)
-                .products
-                .contains(book)) {
+            if (GetFavouritesCubit.get(context).products.contains(book)) {
               RemoveFromFavouritesCubit.get(context)
                   .removeFromFavourites(
                 bookId: book.id.toString(),

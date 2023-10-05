@@ -14,7 +14,8 @@ class AddToCartCubit extends Cubit<AddToCartState> {
 
   final CartRepository cartRepository;
 
-  Future<void> addToCart({required String bookId,required BuildContext context}) async {
+  Future<void> addToCart(
+      {required String bookId, required BuildContext context}) async {
     emit(AddToCartLoadingState());
     Either<Failure, CartModel> result;
     result = await cartRepository.addToCart(bookId: bookId);

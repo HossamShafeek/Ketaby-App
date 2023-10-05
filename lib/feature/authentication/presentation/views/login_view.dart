@@ -22,7 +22,7 @@ class LoginView extends StatelessWidget {
             value: AppConstants.systemUiOverlayStyleDark,
             child: LoginViewBody(),
           ),
-        )
+        ),
       ],
     );
   }

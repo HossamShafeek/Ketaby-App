@@ -19,8 +19,7 @@ class BooksListViewItemHorizontal extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.bookDetailsView,
-            arguments: book);
+        Navigator.pushNamed(context, Routes.bookDetailsView, arguments: book);
       },
       child: Container(
         padding: EdgeInsets.all(AppConstants.padding10h),
@@ -66,8 +65,8 @@ class BooksListViewItemHorizontal extends StatelessWidget {
                     ),
                     Text(
                       book.category!,
-                      style: AppStyles.textStyle15
-                          .copyWith(color: AppColors.grey),
+                      style:
+                          AppStyles.textStyle15.copyWith(color: AppColors.grey),
                     ),
                     Row(
                       children: [

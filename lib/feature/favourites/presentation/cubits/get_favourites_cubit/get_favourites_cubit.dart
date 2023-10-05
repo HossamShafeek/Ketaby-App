@@ -16,7 +16,6 @@ class GetFavouritesCubit extends Cubit<GetFavouritesState> {
 
   final FavouritesRepository favouritesRepository;
 
-
   List<Product> products = [];
 
   Future<void> getFavourites() async {

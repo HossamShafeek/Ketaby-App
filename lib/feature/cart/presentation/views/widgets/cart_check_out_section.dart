@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ketaby/config/routes/app_routes.dart';
 import 'package:ketaby/core/utils/app_colors.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/utils/app_strings.dart';
@@ -34,7 +35,8 @@ class CartCheckOutSection extends StatelessWidget {
                       style: AppStyles.textStyle18,
                     ),
                     Text(
-                      '${cartModel!.data!.total!} EGP',
+                      cartModel!.data!.cartItems!.isEmpty?'0.00 EGP':
+                      '${cartModel.data!.total!} EGP',
                       style: AppStyles.textStyle18.copyWith(
                         color: AppColors.indigo,
                       ),
@@ -45,7 +47,11 @@ class CartCheckOutSection extends StatelessWidget {
                   height: AppConstants.padding10h,
                 ),
                 GradientButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if(cartModel.data!.cartItems!.isNotEmpty){
+                      Navigator.pushNamed(context, Routes.checkoutView);
+                    }
+                  },
                   title: Text(
                     AppStrings.checkout,
                     style: AppStyles.textStyle18.copyWith(
