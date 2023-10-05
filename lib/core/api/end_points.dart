@@ -11,4 +11,8 @@ class EndPoints {
   static const String getFavourites = 'wishlist';
   static const String addToFavourites = 'add-to-wishlist';
   static const String removeFromFavourites = 'remove-from-wishlist';
+  static const String getCart = 'cart';
+  static const String addToCart = 'add-to-cart';
+  static const String updateCart = 'update-cart';
+  static const String removeFromCart = 'remove-from-cart';
 }

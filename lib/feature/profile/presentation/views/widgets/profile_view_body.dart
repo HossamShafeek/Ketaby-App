@@ -33,7 +33,7 @@ class ProfileViewBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const ImageUserProfile(),
+                  ImageUserProfile(imagePath: state.profileModel.data!.image!),
                   NameAndEmailUserProfile(
                     name: state.profileModel.data!.name!,
                     email: state.profileModel.data!.email!,

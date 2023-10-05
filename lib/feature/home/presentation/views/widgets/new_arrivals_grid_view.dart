@@ -51,7 +51,7 @@ class NewArrivalsGridView extends StatelessWidget {
                 mainAxisSpacing: AppConstants.padding10w,
                 itemCount: state.bestSellerModel.data!.products!.length,
                 staggeredTileBuilder: (index) {
-                  return StaggeredTile.count(1, index.isEven ? 1.2 : 1);
+                  return StaggeredTile.count(1, index.isEven ? 1.6 : 1.4);
                 },
                 itemBuilder: (context, index) => BooksListViewItemVertical(
                   book: state.bestSellerModel.data!.products![index],

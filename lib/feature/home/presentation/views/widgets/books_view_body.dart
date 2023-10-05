@@ -23,7 +23,6 @@ class BooksViewBody extends StatelessWidget {
               : BooksCubit.get(context).searchedBooksList.length,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) => BooksListViewItemHorizontal(
-            index: index,
             book: BooksCubit.get(context).searchController.text.isEmpty
                 ? BooksCubit.get(context).products[index]
                 : BooksCubit.get(context).searchedBooksList[index],

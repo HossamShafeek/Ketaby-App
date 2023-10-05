@@ -42,14 +42,14 @@ class BestSellerListView extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 170.h,
+                  height: 180.h,
                   child: ListView.separated(
                     physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return BooksListViewItemVertical(
                         book: state.bestSellerModel.data!.products![index],
-                        width: 120.w,
+                        width: 130.w,
                       );
                     },
                     separatorBuilder: (context, index) {

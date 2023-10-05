@@ -39,6 +39,7 @@ class DrawerButtonsSection extends StatelessWidget {
           title: 'Cart',
           icon: IconBroken.Buy,
           onTap: () {
+            Navigator.pushNamed(context, Routes.cartView);
             AnimatedDrawerCubit.get(context).closeDrawer();
           },
         ),

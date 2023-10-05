@@ -7,9 +7,9 @@ final class GetFavouritesInitialState extends GetFavouritesState {}
 class GetFavouritesLoadingState extends GetFavouritesState {}
 
 class GetFavouritesSuccessState extends GetFavouritesState {
-  final List<Product> prudutes;
+  final List<Product> products;
 
-  GetFavouritesSuccessState(this.prudutes);
+  GetFavouritesSuccessState(this.products);
 }
 
 class GetFavouritesFailureState extends GetFavouritesState {

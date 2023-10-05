@@ -19,4 +19,10 @@ class AppStrings {
   static const String profile = 'Profile';
   static const String books = 'Books';
   static const String favourites = 'Favourites';
+  static const String favouritesAreEmpty = 'Favourites are empty!';
+  static const String cartIsEmpty = 'Cart is empty!';
+  static const String cart = 'Cart';
+  static const String addToCart = 'Add to cart';
+  static const String inCart = 'In cart';
+  static const String checkout = 'CheckOut';
 }

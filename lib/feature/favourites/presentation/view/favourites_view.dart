@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ketaby/core/utils/app_strings.dart';
 import 'package:ketaby/core/widgets/custom_back_button.dart';
-import 'package:ketaby/feature/favourites/presentation/cubits/get_favourites_cubit/get_favourites_cubit.dart';
 import 'package:ketaby/feature/favourites/presentation/view/widgets/favourites_view_body.dart';
 
-class FavouritesView extends StatefulWidget {
+class FavouritesView extends StatelessWidget {
   const FavouritesView({Key? key}) : super(key: key);
-
-  @override
-  State<FavouritesView> createState() => _FavouritesViewState();
-}
-
-class _FavouritesViewState extends State<FavouritesView> {
-  @override
-  void initState() {
-    GetFavouritesCubit.get(context).getFavourites();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ class Product extends Equatable {
   final String? description;
   final String? price;
   final int? discount;
-  final double? priceAfterDiscount;
+  final num? priceAfterDiscount;
   final int? stock;
   final int? bestSeller;
   final String? image;
@@ -29,9 +29,10 @@ class Product extends Equatable {
         id: json['id'] as int?,
         name: json['name'] as String?,
         description: json['description'] as String?,
-        price: json['price'] as String?,
+        price: double.parse(json['price']).toString(),
         discount: json['discount'] as int?,
-        priceAfterDiscount: (json['price_after_discount'] as num?)?.toDouble(),
+        priceAfterDiscount:
+        (double.parse(json['price']) * json['discount'] / 100).toDouble(),
         stock: json['stock'] as int?,
         bestSeller: json['best_seller'] as int?,
         image: json['image'] as String?,

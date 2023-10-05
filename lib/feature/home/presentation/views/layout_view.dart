@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
+import 'package:ketaby/feature/cart/presentation/cubits/get_cart_cubit/get_cart_cubit.dart';
+import 'package:ketaby/feature/favourites/presentation/cubits/get_favourites_cubit/get_favourites_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/animated_drawer_cubit/animated_drawer_cubit.dart';
 import 'package:ketaby/feature/home/presentation/cubits/animated_drawer_cubit/animated_drawer_state.dart';
 import 'package:ketaby/feature/home/presentation/cubits/best_seller_cubit/best_seller_cubit.dart';
@@ -25,6 +27,8 @@ class _LayoutViewState extends State<LayoutView> {
     CategoriesCubit.get(context).getCategories();
     BestSellerCubit.get(context).getBestSeller();
     NewArrivalsCubit.get(context).getNewArrivals();
+    GetFavouritesCubit.get(context).getFavourites();
+    GetCartCubit.get(context).getCart();
     super.initState();
   }
 

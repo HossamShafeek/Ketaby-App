@@ -53,23 +53,26 @@ class BooksListViewItemVertical extends StatelessWidget {
                     ),
                   ),
                 ),
+                Text(
+                  book.category!,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppStyles.textStyle16.copyWith(
+                    color: AppColors.grey,
+                  ),
+                ),
                 Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: AppConstants.padding3h),
+                  padding:  EdgeInsets.symmetric(vertical:AppConstants.padding3h),
                   child: Text(
-                    book.category!,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppStyles.textStyle16.copyWith(
-                      color: AppColors.grey,
+                    '${book.priceAfterDiscount!} EGP',
+                    style: AppStyles.textStyle15.copyWith(
+                      color: AppColors.indigo,
                     ),
                   ),
                 ),
                 Text(
-                  'EGP ${book.price!}',
-                  style: AppStyles.textStyle14.copyWith(
-                    color: AppColors.indigo,
-                  ),
+                  '${book.price!} EGP',
+                  style: AppStyles.textStyle13,
                 ),
               ],
             ),

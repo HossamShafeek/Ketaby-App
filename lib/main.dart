@@ -6,9 +6,13 @@ import 'package:ketaby/config/routes/app_routes.dart';
 import 'package:ketaby/config/themes/app_theme.dart';
 import 'package:ketaby/core/api/api_services_implementation.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
+import 'package:ketaby/feature/cart/data/repository/cart_repository_implementation.dart';
+import 'package:ketaby/feature/cart/presentation/cubits/add_to_cart_cubit/add_to_cart_cubit.dart';
+import 'package:ketaby/feature/cart/presentation/cubits/get_cart_cubit/get_cart_cubit.dart';
 import 'package:ketaby/feature/favourites/data/repository/favourites_repository_implementation.dart';
-import 'package:ketaby/feature/favourites/presentation/cubits/add_and_remove_favourites_cubit/add_and_remove_favourites_cubit.dart';
+import 'package:ketaby/feature/favourites/presentation/cubits/add_to_favourites_cubit/add_to_favourites_cubit.dart';
 import 'package:ketaby/feature/favourites/presentation/cubits/get_favourites_cubit/get_favourites_cubit.dart';
+import 'package:ketaby/feature/favourites/presentation/cubits/remove_from_favourites_cubit/remove_from_favourites_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,16 +34,29 @@ class KetabyApp extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (context) => AddAndRemoveFavouritesCubit(
-                  FavouritesRepositoryImplementation(
-                      ApiServicesImplementation())),
+              create: (context) => AddToFavouritesCubit(
+                FavouritesRepositoryImplementation(ApiServicesImplementation())
+              ),
+            ),
+            BlocProvider(
+              create: (context) => RemoveFromFavouritesCubit(
+                FavouritesRepositoryImplementation(ApiServicesImplementation())
+              ),
             ),
             BlocProvider(
               create: (context) => GetFavouritesCubit(
-                  FavouritesRepositoryImplementation(
-                      ApiServicesImplementation()),AddAndRemoveFavouritesCubit(
-        FavouritesRepositoryImplementation(
-        ApiServicesImplementation())),),
+                FavouritesRepositoryImplementation(ApiServicesImplementation())
+              ),
+            ),
+            BlocProvider(
+              create: (context) => GetCartCubit(
+                CartRepositoryImplementation(ApiServicesImplementation())
+              ),
+            ),
+            BlocProvider(
+              create: (context) => AddToCartCubit(
+                CartRepositoryImplementation(ApiServicesImplementation())
+              ),
             ),
           ],
           child: MaterialApp(

@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ketaby/config/icons/icons_broken.dart';
 import 'package:ketaby/config/routes/app_routes.dart';
 import 'package:ketaby/core/utils/app_colors.dart';
 import 'package:ketaby/core/utils/app_constants.dart';
 import 'package:ketaby/core/utils/app_styles.dart';
-import 'package:ketaby/core/widgets/custom_container_button.dart';
+import 'package:ketaby/core/widgets/add_and_remove_from_Favourites_button.dart';
+import 'package:ketaby/core/widgets/add_and_remove_from_cart_button.dart';
 import 'package:ketaby/core/widgets/custom_network_image.dart';
-import 'package:ketaby/feature/favourites/presentation/cubits/add_and_remove_favourites_cubit/add_and_remove_favourites_cubit.dart';
 import 'package:ketaby/feature/home/data/models/books_model/product.dart';
 
 class BooksListViewItemHorizontal extends StatelessWidget {
-  const BooksListViewItemHorizontal(
-      {Key? key, required this.book, required this.index})
+  const BooksListViewItemHorizontal({Key? key, required this.book})
       : super(key: key);
 
   final Product book;
-  final int index;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.bookDetailsView, arguments: book);
+        Navigator.pushNamed(context, Routes.bookDetailsView,
+            arguments: book);
       },
       child: Container(
         padding: EdgeInsets.all(AppConstants.padding10h),
@@ -63,40 +61,28 @@ class BooksListViewItemHorizontal extends StatelessWidget {
                             ),
                           ),
                         ),
-                        CustomContainerButton(
-                          onTap: () {},
-                          icon: IconBroken.Buy,
-                          color: AppColors.indigo,
-                        ),
+                        AddAndRemoveFromCartButton(book: book),
                       ],
                     ),
                     Text(
                       book.category!,
-                      style:
-                          AppStyles.textStyle15.copyWith(color: AppColors.grey),
+                      style: AppStyles.textStyle15
+                          .copyWith(color: AppColors.grey),
                     ),
                     Row(
                       children: [
                         Text(
-                          'EGP ${book.priceAfterDiscount}  ',
+                          '${book.priceAfterDiscount!} EPG  ',
                           style: AppStyles.textStyle14.copyWith(
                             color: AppColors.indigo,
                           ),
                         ),
                         Text(
-                          'EGP ${book.price}',
+                          '${book.price} EGP',
                           style: AppStyles.textStyle13,
                         ),
                         const Spacer(),
-                        CustomContainerButton(
-                          onTap: () {
-                            AddAndRemoveFavouritesCubit.get(context).addToFavourites(
-                              bookId: book.id.toString(),
-                            );
-                          },
-                          icon: IconBroken.Heart,
-                          color: AppColors.redAccent,
-                        ),
+                        AddAndRemoveFromFavouritesButton(book: book),
                       ],
                     ),
                   ],
